@@ -22,20 +22,20 @@ module.exports = router
 
 router.post('/addmovie', (req, res) => {
     const nuevomovie = new modelomovie({
-        title: req.body.mov_title,
+        ,
         year: req.body.mov_year,
         time: req.body.mov_time,
         lang: req.body.mov_lang,
         date: req.body.mov_dt_rel,
         ountry: req.body.mov_rel_country
     })
-    nuevomovie.save(function (err) {
-        if (err) {
-            res.send('pelicula agregado correctamente')
-        } else {
-            res.send(err)
-        }
-    })
+nuevomovie.save(function (err) {
+    if (err) {
+        res.send('pelicula agregado correctamente')
+    } else {
+        res.send(err)
+    }
+})
 })
 
 router.get('/getmovies', (req, res) => {
@@ -49,7 +49,7 @@ router.get('/getmovies', (req, res) => {
 })
 
 router.post('/obtenerdatamovie', (req, res) => {
-    modelomovie.find({_id:req.body._id}, function (docs, err) {
+    modelomovie.find({ _id: req.body._id }, function (docs, err) {
         if (err) {
             res.send(docs)
         } else {
@@ -59,14 +59,14 @@ router.post('/obtenerdatamovie', (req, res) => {
 })
 
 router.post('/actualizarmovie', (req, res) => {
-    modelomovie.findOneAndUpdate({_id:req.body._id},{
+    modelomovie.findOneAndUpdate({ _id: req.body._id }, {
         mov_title: req.body.mov_title,
         mov_year: req.body.mov_year,
         mov_time: req.body.mov_time,
         mov_lang: req.body.mov_lang,
         mov_dt_rel: req.body.mov_dt_rel,
         mov_rel_country: req.body.mov_rel_country
-    }, (err)=>{
+    }, (err) => {
         if (err) {
             res.send('pelicula actualizada correctamente')
         } else {
@@ -76,16 +76,9 @@ router.post('/actualizarmovie', (req, res) => {
 })
 
 router.post('/borrarmovie', (req, res) => {
-    modelomovie.findOneAndDelete({_id:req.body._id},{
-        mov_title: req.body.mov_title,
-        mov_year: req.body.mov_year,
-        mov_time: req.body.mov_time,
-        mov_lang: req.body.mov_lang,
-        mov_dt_rel: req.body.mov_dt_rel,
-        mov_rel_country: req.body.mov_rel_country
-    }, (err)=>{
+    modelomovie.findOneAndDelete({ _id: req.body._id }, (err) => {
         if (err) {
-            res.send('pelicula actualizada correctamente')
+            res.send('pelicula borrado correctamente')
         } else {
             res.send(err)
         }
