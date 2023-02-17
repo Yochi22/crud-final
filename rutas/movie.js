@@ -29,8 +29,8 @@ router.post('/addmovie', (req, res) => {
         mov_dt_rel: req.body.mov_dt_rel,
         mov_rel_country: req.body.mov_rel_country
     })
-    nuevomovie.save(function (err) {
-        if (err) {
+    nuevomovie.save(function(err){
+        if(err){
             res.send('usuario agregado correctamente')
         } else {
             res.send(err)
