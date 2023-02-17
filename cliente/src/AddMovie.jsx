@@ -25,7 +25,7 @@ var movies = {
   idmovie: uniqid()
 
 }
-
+ console.log(movies)
 
 }
   
