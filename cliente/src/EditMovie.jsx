@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 
 function EditMovie(){
 
+const params = useParams()
+
   const [titulo, setTitulo] = useState('')
   const [año, setAño] = useState('')
   const [duracion, setDuracion] = useState('')
@@ -13,9 +15,9 @@ function EditMovie(){
   const [pais, setPais] = useState('')
   const [idioma, setIdioma] = useState('')
 
-const params = useParams()
+
 useEffect(() => {
-    axios.put('https://videoclub3.onrender.com/movies/dfgdfg', {_id: params._id}).then(res => {
+    axios.post('http://localhost:5000/movie/obtenerdatamovie', {_id: params._id}).then(res => {
         console.log(res.data[0]) 
         const datamovies = res.data[0]
         setTitulo(datamovies.titulo)

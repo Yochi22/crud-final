@@ -35,11 +35,6 @@ import './listmovies.css';
 
 
 
-
-
-
-
-
         const listmovies = datamovies.map(Movies=> {
             return(
               <div className='container' key={Movies._id}>
