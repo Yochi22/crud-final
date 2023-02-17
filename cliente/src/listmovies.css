@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-movies {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 70px;
+}
+
+.container {
+    margin-top: 45px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.list-group-item-title {
+    color: #038a8a;
+}
+
+.list-group {
+    list-style: none;
+}
+
+@media (min-width: 736px) {
+    .container-movies {
+        font-size: 30px;
+    }
+
+
+  }
