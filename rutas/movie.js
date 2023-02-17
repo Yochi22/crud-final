@@ -20,7 +20,7 @@ module.exports = router
 //     res.end('saludo carga desde ruta de ejemplo')
 //   })
 
-router.post('/agregarmovie', (req, res) => {
+router.post('/addmovie', (req, res) => {
     const nuevomovie = new modelomovie({
         mov_title: req.body.mov_title,
         mov_year: req.body.mov_year,
