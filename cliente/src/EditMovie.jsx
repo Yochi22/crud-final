@@ -33,6 +33,31 @@ useEffect(() => {
   
 function editMovie(){
 
+  var editmovie = {
+
+    mov_title: titulo,
+    mov_year: año,
+    mov_time: duracion,
+    mov_lang: idioma,
+    mov_dt_rel: fecha,
+    mov_rel_country: pais,
+    _id: params._id
+  
+  }
+
+console.log(editmovie)
+
+  axios.post('http://localhost:5000/movie/actualizarmovie', editmovie)
+  .then(res => {
+    console.log(res.data)
+    alert(res.data)
+  })
+  .then(err => {
+    console.log(err)
+  })
+
+
+
 }
 
 
