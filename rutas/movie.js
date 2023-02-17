@@ -31,7 +31,7 @@ router.post('/addmovie', (req, res) => {
     })
     nuevomovie.save(function(err){
         if(err){
-            res.send('Película agregada correctamente')
+            res.send('usuario agregado correctamente')
         }else{
             res.send(err)
         }
