@@ -27,6 +27,15 @@ var movies = {
 }
  console.log(movies)
 
+ axios.post('/movie', movies)
+ .then(res => {
+   alert(res.data)
+ })
+ .then(err => {
+   console.log(err)
+ })
+
+
 }
   
   return (
