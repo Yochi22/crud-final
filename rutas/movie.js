@@ -22,13 +22,14 @@ module.exports = router
 
 router.post('/movie/addmovie', (req, res) => {
     const nuevomovie = new modelomovie({
-        title: req.body.mov_title,
+        ,
         year: req.body.mov_year,
         time: req.body.mov_time,
         lang: req.body.mov_lang,
         date: req.body.mov_dt_rel,
         ountry: req.body.mov_rel_country
     })
+<<<<<<< HEAD
     nuevomovie.save(function (err) {
         if (!err) {
             res.send('pelicula agregado correctamente')
@@ -36,6 +37,15 @@ router.post('/movie/addmovie', (req, res) => {
             res.send(err)
         }
     })
+=======
+nuevomovie.save(function (err) {
+    if (err) {
+        res.send('pelicula agregado correctamente')
+    } else {
+        res.send(err)
+    }
+})
+>>>>>>> 14c917f1fe30fd8282ac461bc6e425a4b92a34b6
 })
 
 router.get('/getmovies', (req, res) => {
@@ -49,8 +59,13 @@ router.get('/getmovies', (req, res) => {
 })
 
 router.post('/obtenerdatamovie', (req, res) => {
+<<<<<<< HEAD
     modelomovie.find({_id:req.body._id}, function (docs, err) {
         if (!err) {
+=======
+    modelomovie.find({ _id: req.body._id }, function (docs, err) {
+        if (err) {
+>>>>>>> 14c917f1fe30fd8282ac461bc6e425a4b92a34b6
             res.send(docs)
         } else {
             res.send(err)
@@ -59,15 +74,20 @@ router.post('/obtenerdatamovie', (req, res) => {
 })
 
 router.post('/actualizarmovie', (req, res) => {
-    modelomovie.findOneAndUpdate({_id:req.body._id},{
+    modelomovie.findOneAndUpdate({ _id: req.body._id }, {
         mov_title: req.body.mov_title,
         mov_year: req.body.mov_year,
         mov_time: req.body.mov_time,
         mov_lang: req.body.mov_lang,
         mov_dt_rel: req.body.mov_dt_rel,
         mov_rel_country: req.body.mov_rel_country
+<<<<<<< HEAD
     }, (err)=>{
         if (!err) {
+=======
+    }, (err) => {
+        if (err) {
+>>>>>>> 14c917f1fe30fd8282ac461bc6e425a4b92a34b6
             res.send('pelicula actualizada correctamente')
         } else {
             res.send(err)
@@ -76,6 +96,7 @@ router.post('/actualizarmovie', (req, res) => {
 })
 
 router.post('/borrarmovie', (req, res) => {
+<<<<<<< HEAD
     modelomovie.findOneAndDelete({_id:req.body._id},{
         mov_title: req.body.mov_title,
         mov_year: req.body.mov_year,
@@ -86,6 +107,11 @@ router.post('/borrarmovie', (req, res) => {
     }, (err)=>{
         if (!err) {
             res.send('pelicula actualizada correctamente')
+=======
+    modelomovie.findOneAndDelete({ _id: req.body._id }, (err) => {
+        if (err) {
+            res.send('pelicula borrado correctamente')
+>>>>>>> 14c917f1fe30fd8282ac461bc6e425a4b92a34b6
         } else {
             res.send(err)
         }
