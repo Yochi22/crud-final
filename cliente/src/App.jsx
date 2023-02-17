@@ -15,7 +15,7 @@ function App() {
     <Routes>
       <Route path='/' element={<ListMovies/>}></Route>
       <Route path='/addmovie' element={<AddMovie/>}></Route>
-      <Route path="/editmovie/" element={<EditMovie />} exact></Route>
+      <Route path="/editmovie/:_id" element={<EditMovie />} exact></Route>
     </Routes>
     </BrowserRouter>
 
