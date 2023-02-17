@@ -27,7 +27,7 @@ var movies = {
 }
  console.log(movies)
 
- axios.post('http://localhost:5000/movie/addmovie', movies)
+ axios.post('https://videoclub3.onrender.com/movies/', movies)
  .then(res => {
    alert(res.data)
  })

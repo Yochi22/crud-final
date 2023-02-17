@@ -20,7 +20,7 @@ module.exports = router
 //     res.end('saludo carga desde ruta de ejemplo')
 //   })
 
-router.post('/addmovie', (req, res) => {
+router.post('/movie/addmovie', (req, res) => {
     const nuevomovie = new modelomovie({
         title: req.body.mov_title,
         year: req.body.mov_year,
@@ -30,7 +30,7 @@ router.post('/addmovie', (req, res) => {
         ountry: req.body.mov_rel_country
     })
     nuevomovie.save(function (err) {
-        if (err) {
+        if (!err) {
             res.send('pelicula agregado correctamente')
         } else {
             res.send(err)
@@ -40,7 +40,7 @@ router.post('/addmovie', (req, res) => {
 
 router.get('/getmovies', (req, res) => {
     modelomovie.find({}, function (docs, err) {
-        if (err) {
+        if (!err) {
             res.send(docs)
         } else {
             res.send(err)
@@ -50,7 +50,7 @@ router.get('/getmovies', (req, res) => {
 
 router.post('/obtenerdatamovie', (req, res) => {
     modelomovie.find({_id:req.body._id}, function (docs, err) {
-        if (err) {
+        if (!err) {
             res.send(docs)
         } else {
             res.send(err)
@@ -67,7 +67,7 @@ router.post('/actualizarmovie', (req, res) => {
         mov_dt_rel: req.body.mov_dt_rel,
         mov_rel_country: req.body.mov_rel_country
     }, (err)=>{
-        if (err) {
+        if (!err) {
             res.send('pelicula actualizada correctamente')
         } else {
             res.send(err)
@@ -84,7 +84,7 @@ router.post('/borrarmovie', (req, res) => {
         mov_dt_rel: req.body.mov_dt_rel,
         mov_rel_country: req.body.mov_rel_country
     }, (err)=>{
-        if (err) {
+        if (!err) {
             res.send('pelicula actualizada correctamente')
         } else {
             res.send(err)

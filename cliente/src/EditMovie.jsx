@@ -20,12 +20,12 @@ useEffect(() => {
     axios.post('http://localhost:5000/movie/obtenerdatamovie', {_id: params._id}).then(res => {
         console.log(res.data[0]) 
         const datamovies = res.data[0]
-        setTitulo(datamovies.titulo)
-        setAño(datamovies.año)
-        setDuracion(datamovies.duracion)
-        setFecha(datamovies.fecha)
-        setIdioma(datamovies.idioma)
-        setPais(datamovies.pais)    
+        setTitulo(datamovies.mov_title)
+        setAño(datamovies.mov_year)
+        setDuracion(datamovies.mov_time)
+        setFecha(datamovies.mov_lang)
+        setIdioma(datamovies.mov_dt_rel)
+        setPais(datamovies.mov_rel_country)    
   
     })
   }, [])

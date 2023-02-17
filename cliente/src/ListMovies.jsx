@@ -10,7 +10,7 @@ import './listmovies.css';
         const [datamovies, setDataMovies] = useState([])
         
         useEffect(() => {
-        axios.get('https://videoclub3.onrender.com/movies').then( res => {
+        axios.get('http://localhost:5000/movie/getmovies').then( res => {
           setDataMovies(res.data)
           console.log(res.data)
         }).catch(err => {
