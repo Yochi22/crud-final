@@ -38,7 +38,7 @@ router.post('/addmovie', (req, res) => {
     })
 })
 
-router.get('/obtenermovies', (req, res) => {
+router.get('/getmovies', (req, res) => {
     modelomovie.find({}, function (docs, err) {
         if (err) {
             res.send(docs)
@@ -47,3 +47,4 @@ router.get('/obtenermovies', (req, res) => {
         }
     })
 })
+
