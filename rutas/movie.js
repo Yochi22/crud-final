@@ -66,7 +66,7 @@ router.post('/actualizarmovie', (req, res) => {
         mov_lang: req.body.mov_lang,
         mov_dt_rel: req.body.mov_dt_rel,
         mov_rel_country: req.body.mov_rel_country
-    }, (err){
+    }, (err)=>{
         if (err) {
             res.send('pelicula actualizada correctamente')
         } else {
