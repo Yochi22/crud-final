@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import uniqid from 'uniqid'
-
+import axios from 'axios'
 
 function AddMovie(){
 
@@ -27,7 +27,7 @@ var movies = {
 }
  console.log(movies)
 
- axios.post('/movie', movies)
+ axios.post('http://localhost:5000/movie/addmovie', movies)
  .then(res => {
    alert(res.data)
  })
