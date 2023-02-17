@@ -1,6 +1,8 @@
 const express =require ("express")
 const app = express()
 
+const archivodb = require('./conection')
+
 app.get('/', (req, res)=>{
     res.end('bienvenidos')
 })
