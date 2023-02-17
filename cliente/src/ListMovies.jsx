@@ -35,22 +35,22 @@ function ListMovies(){
     
     
     
-    const listmovies = datamovies.map(Movie=> {
+    const listmovies = datamovies.map(movie=> {
       return(
-        <div className='container' key={Movie._id}>
+        <div className='container' key={movie._id}>
         <div className='row'>
           <div className='columna-lista'>
           <ul className='list-group'>
-            <li className='list-group-item-title' >{Movie.mov_title}</li>
-            <li className='list-group-item'>{Movie.mov_year}</li>
-            <li className='list-group-item'>{Movie.mov_time}</li>
-            <li className='list-group-item'>{Movie.mov_lang}</li>
-            <li className='list-group-item'>{Movie.mov_dt_rel}</li>
-            <li className='list-group-item'>{Movie.mov_rel_country}</li>
+            <li className='list-group-item-title' >{movie.mov_title}</li>
+            <li className='list-group-item'>{movie.mov_year}</li>
+            <li className='list-group-item'>{movie.mov_time}</li>
+            <li className='list-group-item'>{movie.mov_lang}</li>
+            <li className='list-group-item'>{movie.mov_dt_rel}</li>
+            <li className='list-group-item'>{movie.mov_rel_country}</li>
           </ul>
-          <Link to={`/editmovie/${Movie._id}`}><li className='btn btn-success'>Editar</li></Link>
+          <Link to={`/editmovie/${movie._id}`}><li className='btn btn-success'>Editar</li></Link>
             &nbsp;
-            <button onClick={() => handleDelete(Movie._id)} className='btn btn-danger'>Eliminar</button>
+            <button onClick={() => handleDelete(movie._id)} className='btn btn-danger'>Eliminar</button>
             <hr className='mt-4'/>
           </div>
         </div>
