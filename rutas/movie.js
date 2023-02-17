@@ -49,7 +49,7 @@ router.get('/getmovies', (req, res) => {
 })
 
 router.post('/obtenerdatamovie', (req, res) => {
-    modelomovie.find({mov_id:req.body.mov_id}, function (docs, err) {
+    modelomovie.find({_id:req.body._id}, function (docs, err) {
         if (err) {
             res.send(docs)
         } else {
