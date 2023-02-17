@@ -22,12 +22,12 @@ module.exports = router
 
 router.post('/addmovie', (req, res) => {
     const nuevomovie = new modelomovie({
-        mov_title: req.body.mov_title,
-        mov_year: req.body.mov_year,
-        mov_time: req.body.mov_time,
-        mov_lang: req.body.mov_lang,
-        mov_dt_rel: req.body.mov_dt_rel,
-        mov_rel_country: req.body.mov_rel_country
+        title: req.body.mov_title,
+        year: req.body.mov_year,
+        time: req.body.mov_time,
+        lang: req.body.mov_lang,
+        date: req.body.mov_dt_rel,
+        ountry: req.body.mov_rel_country
     })
     nuevomovie.save(function (err) {
         if (err) {
@@ -59,7 +59,24 @@ router.post('/obtenerdatamovie', (req, res) => {
 })
 
 router.post('/actualizarmovie', (req, res) => {
-    modelomovie.findOneAndUpdate({mov_id:req.body.mov_id},{
+    modelomovie.findOneAndUpdate({_id:req.body._id},{
+        mov_title: req.body.mov_title,
+        mov_year: req.body.mov_year,
+        mov_time: req.body.mov_time,
+        mov_lang: req.body.mov_lang,
+        mov_dt_rel: req.body.mov_dt_rel,
+        mov_rel_country: req.body.mov_rel_country
+    }, (err)=>{
+        if (err) {
+            res.send('pelicula actualizada correctamente')
+        } else {
+            res.send(err)
+        }
+    })
+})
+
+router.post('/borrarmovie', (req, res) => {
+    modelomovie.findOneAndDelete({_id:req.body._id},{
         mov_title: req.body.mov_title,
         mov_year: req.body.mov_year,
         mov_time: req.body.mov_time,
